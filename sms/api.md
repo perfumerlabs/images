@@ -13,7 +13,7 @@ API Reference
 `POST /sms`
 
 Parameters (json):
-- phones [array|string,required] - phones to send to, without "+".
+- phones [array or string,required] - phones to send to, without "+".
 - message [string,required] - message text to send.
 - force [bool,optional] - if "true" ignores blacklisting. Default is false.
 - type [string,optional] - "sms" or "call". Default is "sms".
