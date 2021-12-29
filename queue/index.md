@@ -5,27 +5,47 @@ nav_order: 10
 has_children: true
 ---
 
-Queue provides scheduled execution of tasks.
+What is it
+==========
 
-How it works
-============
+This is container providing queueing.
+Queueing is a common task for web applications.
+Queue responsibility is to register a task and execute it at particular time.
+Another responsibility is to normalize load to your servers.
 
-Queueing is a common task for web applications. Queue responsibility is to register a task and execute it at particular time.
+This Queue works in terms of HTTP-requests. Firstly, you register a task via REST API.
+You can provide delay or datetime request parameter to tell Queue, when to execute the task.
+Then, in this time Queue makes HTTP-request with parameters you provided to your backend.
 
-This Queue works in terms of HTTP-requests. Firstly, you register a task via REST API. You can provide delay or datetime request parameter to tell Queue, when to execute the task. Then, in this time Queue makes HTTP-request with parameters you provided to your backend.
+Queue uses [Tarantool](https://www.tarantool.io/) NoSQL database to store tasks.
+Tarantool has a number of extensions and `queue` extension is one of them.
+Tarantool is already bundled to this image, so you don't need to make any additional administration.
 
 Workers
 =======
 
-Often it is needed to have multiple types of workers or several workers of same type. For example, you send sms via some provider and they restricts API calls to 3 requests per second. In this case you have to use dedicated queue worker with 333 milliseconds freeze time between tasks. Or, for instance, you send push notifications. In this case you should configure multiple workers of same type, because single worker will handle tasks too slow.
+A worker is an instance of daemon which does 1 task at a time.
+Worker gets a task from Tarantool, executes it, waits until backend responds, then takes new task.
+So, if you want to execute more tasks at a time, configure more workers.
+Be careful not to set too many workers, because this may lead to overload your backend.
 
-Queue supports configuring any number of workers and its types. For example, we want to have 3 workers with name "foo", 2 workers with name "bar" and 1 - "baz". To configure it provide QUEUE_WORKERS environment variable in json format like this:
+Every worker has a name. The `name` is purpose this worker exists for.
+Often it is needed to have multiple types of workers or several workers of same type.
+For example, you send sms via some provider and they restricts API calls to 3 requests per second.
+In this case you have to use dedicated queue worker with 333 milliseconds freeze time between tasks.
+Or, for instance, you send push notifications.
+In this case you should configure multiple workers of same type, because single worker will handle tasks too slow.
+
+Queue supports configuring any number of workers and its types.
+For example, we want to have 3 workers dealing with emails sending, 2 workers dealing with sms sending.
+To configure it provide QUEUE_WORKERS environment variable in json format like this:
 
 ```
--e "QUEUE_WORKERS={\"foo\":3,\"bar\":2,\"baz\":1}"
+-e "QUEUE_WORKERS={\"email\":3,\"sms\":2}"
 ```
 
-Queue automatically configures database to have 3 tables for queues and start 6 workers.
+Queue automatically configures Tarantool database to have 2 tables for queues and start 5 worker daemons.
+Always divide your workers to different groups to do same kind of activity.
 
 Types of tasks
 ==============

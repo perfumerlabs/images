@@ -42,7 +42,7 @@ services:
     volumes:
       - /my/own/datadir:/data/db
   badges:
-    image: images.perfumerlabs.com/source/badge:v2.0.0
+    image: images.perfumerlabs.com/dist/badge:v2.0.0
     environment:
       MG_HOST: mongo-host
       MG_PORT: 27017

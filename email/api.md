@@ -5,7 +5,7 @@ title: API
 nav_order: 4
 ---
 
-### Create a message through SMTP-server
+### Send email through SMTP-server
 
 ```
 POST /smtp
@@ -35,6 +35,17 @@ Send `plain/text` email to multiple email addresses:
     "subject": "Hello, world!",
     "to": ["foo@example.com", "bar@example.com", "baz@example.com"],
     "text": "Lorem ipsum dolor sit amet..."
+}
+```
+
+Disable signature for a particular email:
+
+```json
+{
+    "subject": "Hello, world!",
+    "to": "bar@example.com",
+    "html": "<p>Lorem ipsum dolor sit amet...</p>",
+    "signature_enabled": false
 }
 ```
 

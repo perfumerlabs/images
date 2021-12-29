@@ -5,9 +5,6 @@ title: API
 nav_order: 4
 ---
 
-API Reference
-=============
-
 ### Create a badge
 
 `POST /badge`
@@ -38,7 +35,7 @@ Response example:
 }
 ```
 
-### Get badges
+### Get badges of a user in collection
 
 `GET /badges`
 
