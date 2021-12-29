@@ -2,7 +2,7 @@
 layout: default
 parent: Upload
 title: Installation
-nav_order: 2
+nav_order: 3
 ---
 
 Installation
