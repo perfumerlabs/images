@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Feed
-nav_order: 7
+nav_order: 70
 has_children: true
 ---
 
