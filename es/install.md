@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ElasticSearch Fulltext
+parent: ElasticSearch Fulltext
 title: Installation
 nav_order: 2
 ---

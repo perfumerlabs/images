@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ElasticSearch Fulltext
+parent: ElasticSearch Fulltext
 title: Configuration
 nav_order: 3
 ---

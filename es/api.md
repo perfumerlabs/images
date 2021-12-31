@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ElasticSearch Fulltext
+parent: ElasticSearch Fulltext
 title: API
 nav_order: 4
 ---
