@@ -11,6 +11,7 @@ Hi, this is documentation for all Perfumerlabs Docker Containers.
 1. [CloudPayments payments](https://perfumerlabs.github.io/images/cloudpayments/)
 1. [Delivery Engine](https://perfumerlabs.github.io/images/delivery/)
 1. [ElasticSearch Fulltext search](https://perfumerlabs.github.io/images/es-fulltext/)
+1. [ElasticSearch Search-as-you-type](https://perfumerlabs.github.io/images/es-sayt/)
 1. [Email delivery](https://perfumerlabs.github.io/images/email/)
 1. [Kassa24 payments](https://perfumerlabs.github.io/images/kassa24/)
 1. [Feeds Building Storage](https://perfumerlabs.github.io/images/feed/)
