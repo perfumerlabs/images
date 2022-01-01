@@ -16,7 +16,7 @@ Pros:
 
 ### Quickstart
 
-Install your services following [installation guide](/images/es/install).
+Install your services following [installation guide](/images/es-fulltext/install).
 
 Create index:
 

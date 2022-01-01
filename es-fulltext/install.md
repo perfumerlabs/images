@@ -28,7 +28,7 @@ docker run \
 -p 80:80/tcp \
 -e ES_HOST=elasticsearch \
 -e ES_PORT=9200 \
--d images.perfumerlabs.com/dist/es:v1.1.2
+-d images.perfumerlabs.com/dist/es-fulltext:v1.0.0
 ```
 
 Tie all together with Docker Compose:
@@ -47,7 +47,7 @@ services:
         soft: -1
         hard: -1
   fulltext:
-    image: images.perfumerlabs.com/dist/es:v1.1.2
+    image: images.perfumerlabs.com/dist/es-fulltext:v1.0.0
     environment:
       ES_HOST: elasticsearch
       ES_PORT: 9200
@@ -56,4 +56,4 @@ services:
         condition: service_started
 ```
 
-Refer to [configuration page](/images/es/config) for parameters description.
+Refer to [configuration page](/images/es-fulltext/config) for parameters description.
