@@ -15,7 +15,7 @@ docker run \
 -p 80:80/tcp \
 -e "QUEUE_WORKERS={\"my_worker\":1}" \
 -v tarantool:/var/lib/tarantool \
--d images.perfumerlabs.com/dist/queue:v1.4.1
+-d images.perfumerlabs.com/dist/queue:v1.4.2
 ```
 
 Tarantool is bundled inside so you don't have to configure it separately.
@@ -28,7 +28,7 @@ docker run \
 -p 80:80/tcp \
 -e "QUEUE_WORKERS={\"my_worker\":1}" \
 -e "TARANTOOL_URI=tcp://my-tarantool-instance:3301" \
--d images.perfumerlabs.com/dist/queue:v1.4.1
+-d images.perfumerlabs.com/dist/queue:v1.4.2
 ```
 
 Note, that in this case you have to configure tarantool queue settings by yourself:
