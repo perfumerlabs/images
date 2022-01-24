@@ -8,7 +8,7 @@ nav_order: 4
 API Reference
 =============
 
-### Create QR from link returning HTML
+### Create QR from string
 
 `GET /qr`
 
