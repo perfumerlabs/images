@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Qiwi
-nav_order: 98
+nav_order: 96
 has_children: true
 ---
 
