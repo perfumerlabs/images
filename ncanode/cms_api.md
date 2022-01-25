@@ -16,11 +16,11 @@ Parameters (json):
 - iin [string,optional] - IIN
 - bin [string,optional] - BIN
 - data [string,optional] - Signature content to verify against CMS signed data.
-- rule [array|string,optional] - rule(s) for validating. ['iin', 'bin', 'auth', 'individual', 'employee', 'ceo', 'organisation']
-- constraints [array|optional] - array of sets {"iin", "bin", "rule"}, request will be successful, if any set is passed
-- verify_ocsp [boolean|optional] - verify
-- verify_crl [boolean|optional] - array of sets {"iin", "bin", "rule"}, request will be successful, if any set is passed
-- checked_at [datetime|optional] - datetime to validate against, when certificate expiration is verified. Optional. Default is current datetime.
+- rule [array or string,optional] - rule(s) for validating. ['iin', 'bin', 'auth', 'individual', 'employee', 'ceo', 'organisation']
+- constraints [array or optional] - array of sets {"iin", "bin", "rule"}, request will be successful, if any set is passed
+- verify_ocsp [boolean or optional] - verify
+- verify_crl [boolean or optional] - array of sets {"iin", "bin", "rule"}, request will be successful, if any set is passed
+- checked_at [datetime or optional] - datetime to validate against, when certificate expiration is verified. Optional. Default is current datetime.
 
 Example request:
 ```json
