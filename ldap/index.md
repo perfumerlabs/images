@@ -27,13 +27,13 @@ Then, first, install the container:
 docker run \
 -e LDAP_HOST=example.com \
 -e LDAP_PORT=389 \
--e LDAP_BIND_DN="uid={{ '{{username}}' }},dc=example,dc=com" \
+-e LDAP_BIND_DN="uid={{ "{{username" }}}},dc=example,dc=com" \
 -d images.perfumerlabs.com/dist/ldap:v1.0.0
 ```
 
 You specify `LDAP_HOST`, `LDAP_PORT` and `LDAP_BIND_DN`.
-Note, how we set `LDAP_BIND_DN` parameter: uid={{ '{{username}}' }},dc=example,dc=com.
-"{{ '{{username}}' }}" is a special substitution, which is used to construct proper user distinguished name in LDAP catalogue.
+Note, how we set `LDAP_BIND_DN` parameter: uid={{ "{{username" }}}},dc=example,dc=com.
+"{{ "{{username" }}}}" is a special substitution, which is used to construct proper user distinguished name in LDAP catalogue.
 
 To log in against LDAP server send next request to container:
 
@@ -46,7 +46,7 @@ To log in against LDAP server send next request to container:
 }
 ```
 
-When request sent, the container sets received username (ben) and replaces "{{ '{{username}}' }}" in configured `LDAP_BIND_DN`.
+When request sent, the container sets received username (ben) and replaces "{{ "{{username" }}}}" in configured `LDAP_BIND_DN`.
 Thus proper distinguished name is built ("uid=ben,dc=example,dc=com" in example).
 
 If username and password parameters are valid, then json object with account attributes is returned (refer to [API page](/images/ldap/api)).
