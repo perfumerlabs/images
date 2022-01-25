@@ -10,7 +10,7 @@ Environment variables
 
 - LDAP_HOST - LDAP server hostname. Required.
 - LDAP_PORT - LDAP server port number. Optional. Default is 389.
-- LDAP_BIND_DN - accounts distinguished name template to bind to. Use special "{{username}}" substitution to specify where to set "username" request parameter. Required.
+- LDAP_BIND_DN - accounts distinguished name template to bind to. Use special "{{ '{{username}}' }}" substitution to specify where to set "username" request parameter. Required.
 - LDAP_ENCRYPTION - if connection to LDAP server is SSL-secured (LDAPS), set "ssl" or "tls". Optional. Default is "none".
 - LDAP_UNTRUSTED_CERT - if connection to LDAP server is SSL-secured and self-signed certificate is used, set "true". Optional. Default is "false".
 
