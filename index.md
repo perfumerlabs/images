@@ -14,6 +14,7 @@ Hi, this is documentation for all Perfumerlabs Docker Containers.
 1. [ElasticSearch Search-as-you-type](https://perfumerlabs.github.io/images/es-sayt/)
 1. [Email delivery](https://perfumerlabs.github.io/images/email/)
 1. [Kassa24 payments](https://perfumerlabs.github.io/images/kassa24/)
+1. [LDAP authentication](https://perfumerlabs.github.io/images/ldap/)
 1. [Feeds Building Storage](https://perfumerlabs.github.io/images/feed/)
 1. [NCA Signatures Storage](https://perfumerlabs.github.io/images/ncanode/)
 1. [One Time Password](https://perfumerlabs.github.io/images/otp/)
