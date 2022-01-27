@@ -25,7 +25,7 @@ Hi, this is documentation for all Perfumerlabs Docker Containers.
 1. [QR code generator](https://perfumerlabs.github.io/images/qr/)
 1. [Questions-Answers engine](https://perfumerlabs.github.io/images/questions/)
 1. [Queue Server](https://perfumerlabs.github.io/images/queue/)
-1. [Request catcher](https://perfumerlabs.github.io/images/request-catcher/)
+1. [Request catcher](https://perfumerlabs.github.io/images/request-catcher/) is a tool for catching web requests for testing webhooks, http clients and other applications that communicate over http, especially helpful to cover it with autotests.
 1. [SMS delivery](https://perfumerlabs.github.io/images/sms/)
 1. [Upload Server](https://perfumerlabs.github.io/images/upload/)
 1. [Wooppay payments](https://perfumerlabs.github.io/images/wooppay/)

@@ -9,8 +9,7 @@ What is it
 ==========
 
 This is a tool for catching web requests for testing webhooks, http clients and other applications that communicate over http.
-
-Also it is very helpful in autotests.
+Especially it is very helpful to cover it with autotests.
 For example: assume you have a containerized service which sends requests to some external API and you want to cover tests for it.
 
 ```yml
@@ -29,7 +28,7 @@ services:
   my-service:
     image: my-service
   external-api:
-    image: images.perfumerlabs.com/dist/request-catcher:v1.0.0
+    image: images.perfumerlabs.com/dist/request-catcher:v2.0.0
 ```
 
 Every request sent to RequestCatcher is persisted and can be asserted in the tests via `/_last_request_` endpoint.

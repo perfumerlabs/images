@@ -11,5 +11,5 @@ Installation
 ```bash
 docker run \
 -p 80:80/tcp \
--d images.perfumerlabs.com/dist/request-catcher:v1.0.0
+-d images.perfumerlabs.com/dist/request-catcher:v2.0.0
 ```

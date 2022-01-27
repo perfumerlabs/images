@@ -8,8 +8,7 @@ nav_order: 3
 Environment variables
 =====================
 
-- PHP_PM_MAX_CHILDREN - number of FPM workers. Default value is 10.
-- PHP_PM_MAX_REQUESTS - number of FPM max requests. Default value is 500.
+This image does not have environment parameters.
 
 Volumes
 =======

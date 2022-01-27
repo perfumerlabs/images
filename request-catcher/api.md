@@ -41,7 +41,10 @@ Response example (for request mentioned above):
     "host": "example.com",
     "port": 80,
     "path": "/path/of/url",
-    "query": "a=1&b=2",
+    "query": {
+        "a": 1,
+        "b": 2,
+    },
     "json": {
         "foo": "bar",
         "baz": 123,
@@ -52,3 +55,12 @@ Response example (for request mentioned above):
     "body": "{\"foo\":\"bar\",\"baz\":123}",
 }
 ```
+
+- If content of last request exists, then `200 Ok` status code and json like above will be returned.
+- If content is missing then `204 No content` status code is returned.
+
+### Delete last received request
+
+`DELETE /_last_request_`
+
+No request parameters.
