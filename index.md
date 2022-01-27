@@ -10,13 +10,9 @@ PerfumerLabs images documentation
 This is documentation in Jekyll format for all PerfumerLabs images.
 
 PerfumerLabs is software company which specializes to develop different small Docker images for various needs.
-Nowadays, every development consists of working with different external services, storages, data structures, etc.
-It makes hard to start any project.
+Nowadays, every development consists of working with different external services, storages, data structures, etc,
+making it hard to start any project from scratch.
 We aim to provide as much as possible ready-to-use software to cover different side-logic.
-
-Below is a list of currently existing Docker images.
-We actively add new software to our collection.
-Follow us in [Telegram](https://t.me/perfumerlabs) to watch for updates.
 
 If you want to learn about our company and services, please, visit our [web-site](https://perfumerlabs.com).
 
@@ -29,6 +25,10 @@ But using containers is much better than implementing your library-based solutio
 - Container is a plug-and-play solution: just run it and it just works.
 - Library can have very specific logic/syntax/protocol, and it usually takes much more time to implement it.
 - Container has not only just library implementation, and also extra features: logging, error handling, caching results, various parameters.
+
+Below is a categorized list of currently available Docker images.
+We actively add new software to our collection and release new versions.
+Follow us in [Telegram](https://t.me/perfumerlabs) to watch for updates.
 
 Files and Images
 ================
