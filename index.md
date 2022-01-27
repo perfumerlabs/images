@@ -4,28 +4,69 @@ title: Images Docs
 nav_order: 1
 ---
 
-Hi, this is documentation for all Perfumerlabs Docker Containers.
+PerfumerLabs images documentation
+=================================
 
-1. [Badges Storage](https://perfumerlabs.github.io/images/badges/)
-1. [Box Server](https://perfumerlabs.github.io/images/box/)
+This is documentation in Jekyll format for all PerfumerLabs images.
+
+PerfumerLabs is software company which specializes to develop different small Docker images for various needs.
+Nowadays, every development consists of working with different external services, storages, data structures, etc.
+It makes hard to start any project.
+We aim to provide as much as possible ready-to-use software to cover different side-logic.
+
+Below is a list of currently existing Docker images.
+We actively add new software to our collection.
+Follow us in [Telegram](https://t.me/perfumerlabs) to watch for updates.
+
+If you want to learn about our company and services, please, visit our [web-site](https://perfumerlabs.com).
+
+Files and Images
+================
+
+1. [HTML to PDF converter](https://perfumerlabs.github.io/images/pdf/) based on LibreOffice tool.
+1. [QR](https://perfumerlabs.github.io/images/qr/) is a simple QR-code generator from URL.
+1. [Upload Server](https://perfumerlabs.github.io/images/upload/) provides API to store images, files, video and audio, as well as actions such as cropping, resizing, rotating and compression.
+
+Different Storage Integrations
+==============================
+
+1. [Delivery](https://perfumerlabs.github.io/images/delivery/) is an engine to automate custom deliveries with built-in integration with our other services such as Email or SMS.
+1. [ElasticSearch Fulltext search](https://perfumerlabs.github.io/images/es-fulltext/) is simplified API (without no need to learn ElasticSearch syntax) to create, index and search through ElasticSearch collections built with Fulltext search template.
+1. [ElasticSearch Search-as-you-type](https://perfumerlabs.github.io/images/es-sayt/) is simplified API (without no need to learn ElasticSearch syntax) to create, index and search through ElasticSearch collections built with Search-as-you-Type search template.
+1. [One Time Password](https://perfumerlabs.github.io/images/otp/) generator provides storing and checking one time passwords, with built-in integration with our services such as Email and SMS.
+1. [Queue Server](https://perfumerlabs.github.io/images/queue/) is a bundled simplified server to perform queuing operations.
+
+Payment Gateways Integrations
+=============================
+
 1. [CloudPayments payments](https://perfumerlabs.github.io/images/cloudpayments/)
-1. [Delivery Engine](https://perfumerlabs.github.io/images/delivery/)
-1. [ElasticSearch Fulltext search](https://perfumerlabs.github.io/images/es-fulltext/)
-1. [ElasticSearch Search-as-you-type](https://perfumerlabs.github.io/images/es-sayt/)
-1. [Email delivery](https://perfumerlabs.github.io/images/email/)
 1. [Kassa24 payments](https://perfumerlabs.github.io/images/kassa24/)
-1. [LDAP authentication](https://perfumerlabs.github.io/images/ldap/)
-1. [Feeds Building Storage](https://perfumerlabs.github.io/images/feed/)
-1. [NCA Signatures Storage](https://perfumerlabs.github.io/images/ncanode/)
-1. [One Time Password](https://perfumerlabs.github.io/images/otp/)
 1. [Paybox payments](https://perfumerlabs.github.io/images/paybox/)
-1. [HTML to PDF converter](https://perfumerlabs.github.io/images/pdf/)
-1. [PostgreSQL backups tester](https://perfumerlabs.github.io/images/postgres-backup/)
 1. [Qiwi payments](https://perfumerlabs.github.io/images/qiwi/)
-1. [QR code generator](https://perfumerlabs.github.io/images/qr/)
-1. [Questions-Answers engine](https://perfumerlabs.github.io/images/questions/)
-1. [Queue Server](https://perfumerlabs.github.io/images/queue/)
-1. [Request catcher](https://perfumerlabs.github.io/images/request-catcher/) is a tool for catching web requests for testing webhooks, http clients and other applications that communicate over http, especially helpful to cover it with autotests.
-1. [SMS delivery](https://perfumerlabs.github.io/images/sms/)
-1. [Upload Server](https://perfumerlabs.github.io/images/upload/)
 1. [Wooppay payments](https://perfumerlabs.github.io/images/wooppay/)
+
+Other Services Integrations
+=============================
+
+1. [Email delivery](https://perfumerlabs.github.io/images/email/) is a RESTful API endpoint to send emails through SMTP gateway.
+1. [LDAP](https://perfumerlabs.github.io/images/ldap/) is RESTful API endpoint to authenticate against LDAP server (i.e. ActiveDirectory) without no need to learn LDAP terms such as bindings and distinguished names.
+1. [SMS](https://perfumerlabs.github.io/images/sms/) is an integration with different SMS gateways on the market.
+
+Data Structures Images
+======================
+
+1. [Badges](https://perfumerlabs.github.io/images/badges/) is a storage to provide REST API to store, retrieve and delete countable events.
+1. [Box](https://perfumerlabs.github.io/images/box/) is a simplified intermediate storage to exchange data between multiple projects.
+1. [Feed](https://perfumerlabs.github.io/images/feed/) is a data structure in PostgreSQL database, which provides REST API to store, retrieve and delete records for any feed-like functionality on the site.
+1. [Questions-Answers](https://perfumerlabs.github.io/images/questions/) is our custom YAML-based protocol to describe questions tree to build functionality such as quizes and questionnaires in the site.
+
+Testing Tools
+=============
+
+1. [PostgreSQL backups tester](https://perfumerlabs.github.io/images/postgres-backup/) is small service, which continuously tests your PostgreSQL backups for corruption.
+1. [Request catcher](https://perfumerlabs.github.io/images/request-catcher/) is a tool for catching web requests for testing webhooks, http clients and other applications that communicate over http, especially helpful to cover it with autotests.
+
+Kazakhstan NCA certificates
+===========================
+
+1. [NCA Signatures](https://perfumerlabs.github.io/images/ncanode/) - is a data structure in PostgreSQL database for Kazakhstan NCA certificates signed documents, also it provides convenient API endpoints to verify signatures data.

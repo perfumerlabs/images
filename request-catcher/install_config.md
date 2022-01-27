@@ -1,9 +1,19 @@
 ---
 layout: default
 parent: Request Catcher
-title: Configuration
-nav_order: 3
+title: Installation
+nav_order: 2
 ---
+
+Installation
+============
+
+Request Catcher does not require any dependencies:
+
+```bash
+docker run \
+-d images.perfumerlabs.com/dist/request-catcher:v2.0.0
+```
 
 Environment variables
 =====================

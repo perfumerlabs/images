@@ -56,6 +56,19 @@ Response example (for request mentioned above):
 }
 ```
 
+Response parameters:
+
+- method[string] - Request method of catched request.
+- host[string] - Request hostname of catched request.
+- port[integed] - Request port number of catched request.
+- path[string] - URL path part of catched request.
+- query[object] - query string of catched request in form of object for convenience in autotests, because order of query string parameters can change unexpectedly.
+- json[object] - is a json body string of catched request, if it is not json request, then it will be "null".
+- headers[object] - headers object of catched request.
+- body[string] - raw body of catched request.
+
+Response status codes:
+
 - If content of last request exists, then `200 Ok` status code and json like above will be returned.
 - If content is missing then `204 No content` status code is returned.
 
