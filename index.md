@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Images Docs
+title: PerfumerLabs Docs
 nav_order: 1
 ---
 
@@ -19,6 +19,16 @@ We actively add new software to our collection.
 Follow us in [Telegram](https://t.me/perfumerlabs) to watch for updates.
 
 If you want to learn about our company and services, please, visit our [web-site](https://perfumerlabs.com).
+
+Why Container instead of Library?
+---------------------------------
+
+Of course, every functionality we provide can be done with sample libraries in you favourite language.
+But using containers is much better than implementing your library-based solution:
+
+- Container is a plug-and-play solution: just run it and it just works.
+- Library can have very specific logic/syntax/protocol, and it usually takes much more time to implement it.
+- Container has not only just library implementation, and also extra features: logging, error handling, caching results, various parameters.
 
 Files and Images
 ================
