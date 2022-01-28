@@ -60,7 +60,7 @@ Other Services Integrations
 
 1. [Email delivery](https://perfumerlabs.github.io/images/email/) is a RESTful API endpoint to send emails through SMTP gateway.
 1. [LDAP](https://perfumerlabs.github.io/images/ldap/) is RESTful API endpoint to authenticate against LDAP server (i.e. ActiveDirectory) without no need to learn LDAP terms such as bindings and distinguished names.
-1. [SMS](https://perfumerlabs.github.io/images/sms/) is an integration with different SMS gateways on the market.
+1. [SMS](https://perfumerlabs.github.io/images/sms/) is an integration with different SMS and robotic calls gateways on the market.
 
 Data Structures Images
 ======================

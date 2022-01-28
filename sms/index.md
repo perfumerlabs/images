@@ -8,7 +8,7 @@ has_children: true
 SMS Gateways
 ============
 
-This is an image providing API to send sms through several external SMS providers.
+This is an image providing API to send sms and robotic calls through several external SMS providers.
 You don't need to learn API docs in particular providers site.
 All providers API is simplified and unified into single API.
 
