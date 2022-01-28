@@ -1,12 +1,12 @@
 ---
 layout: default
-title: OTP
+title: One time Password
 nav_order: 90
 has_children: true
 ---
 
-What is it
-==========
+One time Password
+=================
 
 This is a container providing one time passwords sending and verifying through sms and email.
 This container must be set up in conjunction with [Queue](https://github.com/perfumerlabs/queue), [SMS](https://github.com/perfumerlabs/sms) and [Email](https://github.com/perfumerlabs/email).
