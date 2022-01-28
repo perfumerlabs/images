@@ -20,7 +20,7 @@ Currently, we support 4 SMS Providers
 1. [Twilio](https://twilio.com) - big international provider
 1. [SMSC](https://smsc.ru) - biggest Russia Federation Provider
 1. [EpochtaSMS](https://www.epochta.ru/) - another Russia Federation provider
-1. [Mobizon/](https://mobizon.kz) - Kazakhstan provider
+1. [Mobizon](https://mobizon.kz) - Kazakhstan provider
 
 Usage
 -----
@@ -41,7 +41,7 @@ docker run \
 -e PG_DATABASE=sms_db \
 -e PG_USER=user \
 -e PG_PASSWORD=password \
--d images.perfumerlabs.com/dist/sms:v1.4.0
+-d images.perfumerlabs.com/dist/sms:v2.0.0
 ```
 
 After setup call this API in your code to send SMS:
@@ -50,7 +50,7 @@ After setup call this API in your code to send SMS:
 POST http://sms-container/sms
 
 {
-    "phones": "+71234567890",
+    "phones": "71234567890",
     "message": "Hi"
 }
 ```
@@ -69,12 +69,31 @@ To send `call` request make this API request in your code:
 POST http://sms-container/call
 
 {
-    "phones": "+71234567890",
+    "phones": "71234567890",
     "message": "Hi"
 }
 ```
 
 And this will work.
+
+Note, that for the moment, only SMSC.ru "call" integration is accessible.
+
+Blacklisting
+------------
+
+Container also supports setting phones to blacklist.
+Blacklisted phones don't receive sms or calls.
+To blacklist a phone make request:
+
+```
+POST http://sms-container/blacklist
+
+{
+    "phone": "71234567890"
+}
+```
+
+Check out more options at [API](/images/sms/api) page.
 
 Queueing
 --------
