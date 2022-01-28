@@ -1,6 +1,6 @@
 ---
 layout: default
-parent: SMS
+parent: SMS Gateways
 title: Installation
 nav_order: 2
 ---

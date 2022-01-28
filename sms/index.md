@@ -1,6 +1,6 @@
 ---
 layout: default
-title: SMS
+title: SMS Gateways
 nav_order: 110
 has_children: true
 ---
@@ -26,7 +26,7 @@ Usage
 -----
 
 For example, you have account in [SMSC](https://smsc.ru) service.
-Then, install container with this command (SMS uses PostgreSQL to persist some information, so you need to install an instance of it first, refer to [installation docs](/images/sms/install):
+Then, install container with this command (SMS uses PostgreSQL to persist some information, so you need to install an instance of it first, refer to [installation docs](/images/sms/install)):
 
 ```bash
 docker run \

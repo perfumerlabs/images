@@ -1,6 +1,6 @@
 ---
 layout: default
-parent: SMS
+parent: SMS Gateways
 title: Configuration
 nav_order: 3
 ---

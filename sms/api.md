@@ -1,6 +1,6 @@
 ---
 layout: default
-parent: SMS
+parent: SMS Gateways
 title: API
 nav_order: 4
 ---
