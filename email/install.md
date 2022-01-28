@@ -21,7 +21,7 @@ docker run \
 -e SMTP_USERNAME=your-gmail-account@gmail.com \
 -e SMTP_PASSWORD=your-gmail-password \
 -e SMTP_ENCRYPTION=tls \
--d images.perfumerlabs.com/dist/email:v1.2.1
+-d images.perfumerlabs.com/dist/email:v1.3.0
 ```
 
 Queueing
@@ -50,7 +50,7 @@ services:
     volumes:
       - tarantool:/var/lib/tarantool
   email:
-    image: images.perfumerlabs.com/dist/otp:v2.4.1
+    image: images.perfumerlabs.com/dist/email:v1.3.0
     environment:
       EMAIL_FROM: your-gmail-account@gmail.com
       SMTP_HOST: smtp.gmail.com

@@ -19,6 +19,7 @@ Environment variables
 - EMAIL_SIGNATURE_TEXT - text of signature to append to every `plain/text` email. Optional.
 - PHP_PM_MAX_CHILDREN - number of FPM workers. Default value is 10.
 - PHP_PM_MAX_REQUESTS - number of FPM max requests. Default value is 500.
+- DEBUG - set to "true", if you want to see more debug information in container STDOUT. Default is "false".
 
 Volumes
 =======
