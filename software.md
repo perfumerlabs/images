@@ -66,8 +66,14 @@ There will be no problem if you configure images to same database and `public` s
 But the best practice we suppose is to have 1 database and to use different schema for different container.
 
 NoSQL databases
-===============
+---------------
 
 Several of our images uses NoSQL databases to store information.
 As a rule, we don't bundle Database instance to container, until different is mentioned in documentation.
 So you must to configure your instance.
+
+Testing
+-------
+
+We cover 99% functionality of our images with automated functional tests.
+We use open-source [Codeception](https://codeception.com) library to write tests.
