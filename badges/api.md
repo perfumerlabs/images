@@ -16,7 +16,8 @@ Parameters (json):
 - payload [string,optional] - optional extra data.
 
 Request example:
-```javascript
+
+```json
 {
     "collection": "my_collection1",
     "name": "profile/1",
@@ -29,7 +30,7 @@ Request example:
 
 Response example:
 
-```javascript
+```json
 {
     "status": true
 }
@@ -45,7 +46,8 @@ Parameters (json):
 - name [string,optional] - Name of the badge.
 
 Request example:
-```javascript
+
+```json
 {
     "collection": "my_collection1",
     "name": "profile/1",
@@ -55,7 +57,7 @@ Request example:
 
 Response example:
 
-```javascript
+```json
 {
     "status": true,
     "content": {
@@ -83,7 +85,8 @@ Parameters (json):
 - name [string,optional] - Name of the badge.
 
 Request example:
-```javascript
+
+```json
 {
     "collection": "my_collection1",
     "name": "profile/1",
@@ -93,7 +96,7 @@ Request example:
 
 Response example:
 
-```javascript
+```json
 {
     "status": true
 }
@@ -109,7 +112,8 @@ Parameters (json):
 - user [string,required] - Name of the user.
 
 Request example:
-```javascript
+
+```json
 {
     "collection": "my_collection1",
     "names": ["profile/1", "profile/2", "_all"],
@@ -119,7 +123,7 @@ Request example:
 
 Response example:
 
-```javascript
+```json
 {
     "status": true,
     "content": {

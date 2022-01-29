@@ -1,6 +1,6 @@
 ---
 layout: default
-title: PerfumerLabs Docs
+title: About
 nav_order: 1
 ---
 

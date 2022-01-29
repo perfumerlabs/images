@@ -48,7 +48,6 @@ services:
       MG_PORT: 27017
       MG_DATABASE: badges
       MG_COLLECTIONS: 'my_collection1,my_collection2'
-      TEST: "true"
     depends_on:
       mongo:
         condition: service_started
