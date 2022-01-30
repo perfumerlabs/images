@@ -1,6 +1,6 @@
 ---
 layout: default
-title: One time Password
+title: One Time Password
 nav_order: 90
 has_children: true
 ---

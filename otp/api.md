@@ -1,6 +1,6 @@
 ---
 layout: default
-parent: One time Password
+parent: One Time Password
 title: API
 nav_order: 4
 ---

@@ -1,6 +1,6 @@
 ---
 layout: default
-parent: One time Password
+parent: One Time Password
 title: Installation
 nav_order: 2
 ---
