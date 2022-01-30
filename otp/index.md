@@ -8,27 +8,118 @@ has_children: true
 One time Password
 =================
 
-This is a container providing one time passwords sending and verifying through sms and email.
-This container must be set up in conjunction with [Queue](https://github.com/perfumerlabs/queue), [SMS](https://github.com/perfumerlabs/sms) and [Email](https://github.com/perfumerlabs/email).
+One time Passwords (or OTP) are used in sites to verify, that user owns phone or email they filled in th form.
+For that purpose short code is sent to phone number via SMS or to email address via e-mailing and user have to fill in this code in the form,
+and, thus, confirm that the phone or email is valid and are owned by him.
 
-#### Steps to configure otp's on your project
+This image provides REST API to generate and validate OTPs.
+You can manage OTPs via SMS, Email, Telegram or robotic calls.
+This image works in conjunction with our other images such as 
+[Queue](/images/queue), [SMS](/images/sms) and [Email](/images/email).
 
-1. Configure [Queue](https://github.com/perfumerlabs/queue), [SMS](https://github.com/perfumerlabs/sms) and/or [Email](https://github.com/perfumerlabs/email)
-1. Configure this container. Note, that default settings suppose that services above are called `queue`, `sms` and `email` in your cluster.
-1. Create OTPs via `POST /sms` or `POST /email`.
-1. Check OTPs via `GET /sms/check` or `GET /email/check`
+Refer to [installation page](/images/otp/install) how to properly set up integrations.
 
-#### Telegram otp's
+SMS OTP
+-------
 
-You can do same setup as above:
+To create SMS OTP just call:
 
-1. Create your Telegram Bot.
-1. Run [1flx/http-telegram-notify](https://github.com/flxs/http-telegram-notify) docker container.
-1. Set OTP_TELEGRAM_URL, OTP_TELEGRAM_APP_TOKEN, OTP_TELEGRAM_WORKER appropriately.
-1. Create OTPs via `POST /telegram`.
-1. Check OTPs via `GET /telegram/check`.
+`POST /sms`
 
-Also there more out-of-the-box functionality. Instead of manually call to OTP API you can publish ready-to-use endpoint for the Bot.
+```json
+{
+    "phone": "77011234567",
+    "password": "12345",
+    "lifetime": 300,
+    "message": "Your OTP is 12345"
+}
+```
+
+Container internally route request to [SMS](/images/sms) with specified `phone` and `message`.
+Also saves `password` and sets it lifetime to specified seconds (5 minutes in the example).
+
+To check password user filled in the form, call:
+
+`GET /sms/check`
+
+```json
+{
+    "phone": "77011234567",
+    "password": "12345"
+}
+```
+
+Call OTP
+--------
+
+Robotic calls uses the same integration as SMS, so request bodies you sent exactly the same as in SMS OTPs,
+but endpoints are changed to `POST /call` and `GET /call/check`.
+
+Email OTP
+---------
+
+To create Email OTP just call:
+
+`POST /email`
+
+```json
+{
+    "email": "foobar@example.com",
+    "password": "12345",
+    "lifetime": 300,
+    "subject": "Hello",
+    "text": "Your OTP is 12345"
+}
+```
+
+Container internally route request to [Email](/images/email) with specified `email`, `subject` and `text`.
+Also saves `password` and sets it lifetime to specified seconds (5 minutes in the example).
+
+To check password user filled in the form, call:
+
+`GET /email/check`
+
+```json
+{
+    "email": "foobar@example.com",
+    "password": "12345"
+}
+```
+
+Telegram OTP
+------------
+
+To create Telegram OTP call:
+
+`POST /telegram`
+
+```json
+{
+    "chat_id": "1234567890",
+    "password": "12345",
+    "lifetime": 300,
+    "message": "Your OTP is 12345"
+}
+```
+
+To send OTP for Telegram this image uses open source project
+[1flx/http-telegram-notify](https://github.com/flxs/http-telegram-notify).
+Container internally route request to to with specified `chat_id`, `message`.
+Also saves `password` and sets it lifetime to specified seconds (5 minutes in the example).
+
+To check password user filled in the form, call:
+
+`GET /telegram/check`
+
+```json
+{
+    "chat_id": "1234567890",
+    "password": "12345"
+}
+```
+
+Also there is more out-of-the-box functionality. 
+Instead of manually call to OTP API you can publish ready-to-use endpoint for the Bot.
 
 1. Configure bot webhook to URL - https://your-otp-host/telegram/webhook. Note that URL must be `https` and internet accessible.
 1. When a user types anything to bot, webhook is sent to OTP and it generates new password and send it to bot.
@@ -36,7 +127,8 @@ Also there more out-of-the-box functionality. Instead of manually call to OTP AP
 1. Then you can validate this password through `GET /target` endpoint and obtain user's CHAT_ID and save to your storage.
 1. Use CHAT_ID then to notify user about something.
 
-#### Authorization
+Authorization
+-------------
 
 If you use telegram otp's and publish OTP service to internet, then some access restriction is needed.
 There support of HTTP Basic Authorization.

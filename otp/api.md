@@ -230,6 +230,31 @@ Response example:
 }
 ```
 
+### Check call OTP
+
+`GET /call/check`
+
+Parameters (json):
+- phone [string,required] - phone, without "+".
+- password [string,required] - one time password.
+
+Request example:
+
+```json
+{
+    "phone": "77011234567",
+    "password": "12345"
+}
+```
+
+Response example:
+
+```json
+{
+    "status": true
+}
+```
+
 ### Check email OTP
 
 `GET /email/check`
@@ -423,7 +448,7 @@ Response example:
 }
 ```
 
-### Get last password by a user credentials
+### Get last valid password by a user credentials
 
 `GET /password`
 
