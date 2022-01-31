@@ -4,21 +4,6 @@ parent: Feed
 title: API
 nav_order: 4
 ---
-
-Database tables
-===============
-
-After setup there are 1 predefined table in database:
-
-### feed_collection
-
-Registry of collections. Fields:
-
-- name [string] - Name of collection
-- websocket_module [string] - module of websocket pushes.
-- badges_collection [string] - collection of Badges to push badges to.
-- badges_prefix [string] - prefix of badges names.
-
 API Reference
 =============
 
@@ -28,41 +13,12 @@ API Reference
 
 Parameters (json):
 - name [string,required] - name of the collection.
-- websocket_module [string,optional] - module of websocket pushes.
-- badges_collection [string,optional] - collection of Badges to push badges to.
-- badges_prefix [string,optional] - prefix of badges names.
 
 Request example:
 
 ```json
 {
     "name": "foobar"
-}
-```
-
-Response example:
-
-```json
-{
-    "status": true
-}
-```
-
-### Update collection
-
-`PATCH /collection`
-
-Parameters (json):
-- name [string,required] - name of the collection.
-- websocket_module [string,optional] - module of websocket pushes.
-- badges_collection [string,optional] - collection of Badges to push badges to.
-- badges_prefix [string,optional] - prefix of badges names.
-
-Request example:
-
-```json
-{
-    "websocket_module": "foobar"
 }
 ```
 
@@ -88,8 +44,6 @@ Request parameters (json):
 - image [string,optional] - image of record.
 - payload [json,optional] - any JSON-serializable content.
 - created_at [datetime,optional] - date of record creation.
-- websocket_channel [string,optional] - centrifugo channel to push event to (if not equal to "recipient").
-- badge_user [string,optional] - badge user to save badge for (if not equal to "recipient").
 
 Request example:
 
@@ -139,40 +93,6 @@ Response example:
             "created_at": "2020-10-01 00:00:00"
         }
     }
-}
-```
-
-If "websocket_module" is set for collection, then websocket push will be sent:
-
-```json
-{
-    "module": "{{websocket_module}}",
-    "event": "{{collection_name}}.record",
-    "content": {
-        "record": {
-            "id": 1,
-            "recipient": "client1",
-            "sender": "client2",
-            "thread": "chat",
-            "title": "Hello",
-            "text": "World",
-            "image": "https://example.com/image.jpg",
-            "payload": {
-                "foo": "bar"
-            },
-            "created_at": "2020-10-01 00:00:00"
-        }
-    }
-}
-```
-
-If "badges_collection" is set for collection, then badge will be saved:
-
-```json
-{
-    "collection": "{{badges_collection}}",
-    "name": "{{badges_prefix if set}}}/{{collection_name}}/record/{{ID of inserted record}}",
-    "user": "client1"
 }
 ```
 
@@ -254,16 +174,6 @@ Response example:
 }
 ```
 
-If "badges_collection" is set for collection, then badge will be removed:
-
-```json
-{
-    "collection": "{{badges_collection}}",
-    "name": "{{badges_prefix if set}}}/{{collection_name}}/record/{{ID of read record}}",
-    "user": "client1"
-}
-```
-
 ### Get records
 
 `GET /records`
@@ -278,6 +188,8 @@ Request parameters (json):
 - id [integer,optional] - the id of document to start from.
 - order [string,optional] - type of ordering ("asc" or "desc"). Default is "desc".
 - is_read [boolean,optional] - if true return only read records, if false - only unread, if null - both. Default is "null".
+- limit [integer,optional] - number of records to return.
+- offset [integer,optional] - number of records to offset from.
 
 Request example:
 
@@ -325,7 +237,47 @@ Response example:
     }
 }
 ```
+
+### Get records number by filters
+
+`GET /records/count`
+
+Request parameters (json):
+- collection [string,required] - name of the collection.
+- recipient [string,required] - name of the recipient.
+- sender [string,optional] - name of the sender.
+- user [string,optional] - name of the sender or recipient. If user is present, recipient and sender will be ignored.
+- thread [string,optional] - name of the thread.
+- search [string,optional] - searching string in "title" or "text".
+- id [integer,optional] - the id of document to start from.
+- is_read [boolean,optional] - if true return only read records, if false - only unread, if null - both. Default is "null".
+
+Request example:
+
+```json
+{
+    "collection": "foobar",
+    "recipient": "client1"
+}
+```
+
+Response parameters (json):
+
+- records [integer] - number fo found records.
+
+Response example:
+
+```json
+{
+    "status": true,
+    "content": {
+        "records": 5
+    }
+}
+```
+
 ### Update records
+
 `PATCH /records`
 
 Request parameters (json):
@@ -380,7 +332,6 @@ Response example:
 Request parameters (json):
 - id [integer,required] - id of the record.
 - collection [string,required] - name of the collection.
-- badge_user [string,optional] - badge user to remove badge from (if not equal to "recipient").
 
 Request example:
 
@@ -396,16 +347,6 @@ Response example:
 ```json
 {
     "status": true
-}
-```
-
-If "badges_collection" is set for collection, then badge will be removed:
-
-```json
-{
-    "collection": "{{badges_collection}}",
-    "name": "{{badges_prefix if set}}}/{{collection_name}}/record/{{ID of read record}}",
-    "user": "client1"
 }
 ```
 
@@ -416,7 +357,6 @@ If "badges_collection" is set for collection, then badge will be removed:
 Request parameters (json):
 - id [integer,required] - id of the record.
 - collection [string,required] - name of the collection.
-- badge_user [string,optional] - badge user to save badge for (if not equal to "recipient").
 
 Request example:
 
@@ -435,16 +375,6 @@ Response example:
 }
 ```
 
-If "badges_collection" is set for collection, then badge will be saved:
-
-```json
-{
-    "collection": "{{badges_collection}}",
-    "name": "{{badges_prefix if set}}}/{{collection_name}}/record/{{ID of read record}}",
-    "user": "client1"
-}
-```
-
 ### Read all records of recipient
 
 `POST /records/read`
@@ -452,7 +382,6 @@ If "badges_collection" is set for collection, then badge will be saved:
 Request parameters (json):
 - recipient [string,required] - name of recipient.
 - collection [string,required] - name of the collection.
-- badge_user [string,optional] - badge user to remove badges from (if not equal to "recipient").
 
 Request example:
 
@@ -468,16 +397,6 @@ Response example:
 ```json
 {
     "status": true
-}
-```
-
-If "badges_collection" is set for collection, then badges will be removed:
-
-```json
-{
-    "collection": "{{badges_collection}}",
-    "name": "{{badges_prefix if set}}}/{{collection_name}}/record",
-    "user": "client1"
 }
 ```
 
@@ -488,7 +407,6 @@ If "badges_collection" is set for collection, then badges will be removed:
 Request parameters (json):
 - recipient [string,required] - name of recipient.
 - collection [string,required] - name of the collection.
-- badge_user [string,optional] - badge user to remove badges from (if not equal to "recipient").
 
 Request example:
 
@@ -504,15 +422,5 @@ Response example:
 ```json
 {
     "status": true
-}
-```
-
-If "badges_collection" is set for collection, then badges will be removed:
-
-```json
-{
-    "collection": "{{badges_collection}}",
-    "name": "{{badges_prefix if set}}}/{{collection_name}}/record",
-    "user": "client1"
 }
 ```

@@ -44,7 +44,6 @@ Suppose, you installed both PostgreSQL servers and now have PostgreSQL hosts and
 
 ```bash
 docker run \
--p 80:80/tcp \
 -e DUMPS_DIR=/my/dumps/dir \
 -e PG_HOST=db \
 -e PG_REAL_HOST=db \

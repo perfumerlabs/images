@@ -15,7 +15,6 @@ For example, this command installs PostgreSQL from [official docker image](https
 
 ```bash
 docker run \
--p 5432:5432/tcp \
 -v /custom/mount:/var/lib/postgresql/data \
 -e POSTGRES_PASSWORD=mysecretpassword
 -d postgres
@@ -38,7 +37,7 @@ services:
     volumes:
       - /custom/mount:/var/lib/postgresql/data
   otp:
-    image: images.perfumerlabs.com/dist/otp:v2.4.1
+    image: images.perfumerlabs.com/dist/otp:v2.4.2
     environment:
       PG_HOST: postgres
       PG_REAL_HOST: postgres

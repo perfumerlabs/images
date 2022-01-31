@@ -8,12 +8,8 @@ nav_order: 3
 Environment variables
 =====================
 
-- FEED_TIMEZONE - Timezone of incoming or outcoming dates. Optional. Default is "Utc".
+- MS_TIMEZONE - Timezone of incoming or outcoming dates. Optional. Default is "Utc".
 - FEED_COLLECTIONS - Create collections on startup (list through comma). Optional.
-- CENTRIFUGO_HOST - host of centrifugo server. Optional.
-- CENTRIFUGO_API_KEY - Centrifugo API Key. Optional.
-- CENTRIFUGO_SECRET_KEY - Centrifugo Secret Key. Optional.
-- BADGES_HOST - host of Badges server. Optional.
 - PG_HOST - PostgreSQL connection host. Required.
 - PG_REAL_HOST - PostgreSQL database instance host (not PgBouncer). Required.
 - PG_PORT - PostgreSQL port. Default value is 5432.

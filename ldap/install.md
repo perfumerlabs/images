@@ -13,7 +13,6 @@ It can be installed via following command:
 
 ```bash
 docker run \
--p 80:80/tcp \
 -e LDAP_HOST=my-ldap.com \
 -e LDAP_PORT=389 \
 -e LDAP_BIND_DN="uid={{ "{{username" }}}},dc=example,dc=com" \

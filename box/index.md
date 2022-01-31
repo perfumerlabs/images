@@ -13,7 +13,6 @@ has_children: true
 
 ```bash
 docker run \
--p 80:80/tcp \
 -e BOX_ADMIN_USER=user \
 -e BOX_ADMIN_SECRET=secret \
 -e PG_REAL_HOST=db \
@@ -376,7 +375,6 @@ High Availability
 
 ```bash
 docker run \
--p 80:80/tcp \
 -e BOX_ADMIN_USER=user \
 -e BOX_ADMIN_SECRET=secret \
 -e BOX_IS_SYSTEM=true \
@@ -403,7 +401,6 @@ BOX_INSTANCES - указывается адрес кластера Cluster2.
 
 ```bash
 docker run \
--p 80:80/tcp \
 -e BOX_ADMIN_USER=user \
 -e BOX_ADMIN_SECRET=secret \
 -e BOX_IS_SYSTEM=true \

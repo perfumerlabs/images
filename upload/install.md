@@ -15,7 +15,6 @@ For example, this command installs PostgreSQL from [official docker image](https
 
 ```bash
 docker run \
--p 5432:5432/tcp \
 -v /custom/mount:/var/lib/postgresql/data \
 -e POSTGRES_PASSWORD=mysecretpassword
 -d postgres
@@ -25,7 +24,6 @@ Suppose, you installed PostgreSQL server and now have PostgreSQL host and port. 
 
 ```bash
 docker run \
--p 80:80/tcp \
 -e UPLOAD_HOST=example.com \
 -e PG_REAL_HOST=db \
 -e PG_HOST=db \

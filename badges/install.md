@@ -24,7 +24,6 @@ Suppose, you installed Mongo server and now have Mongo host and port. Then this 
 
 ```bash
 docker run \
--p 80:80/tcp \
 -e MG_HOST=mongo-host \
 -e MG_PORT=27017 \
 -e MG_DATABASE=badges \

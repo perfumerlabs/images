@@ -12,7 +12,6 @@ To install Queue you can use command below:
 
 ```bash
 docker run \
--p 80:80/tcp \
 -e "QUEUE_WORKERS={\"my_worker\":1}" \
 -v tarantool:/var/lib/tarantool \
 -d images.perfumerlabs.com/dist/queue:v1.4.2
@@ -25,7 +24,6 @@ If you want to use dedicated Tarantool instance for some reason (not recommended
 
 ```bash
 docker run \
--p 80:80/tcp \
 -e "QUEUE_WORKERS={\"my_worker\":1}" \
 -e "TARANTOOL_URI=tcp://my-tarantool-instance:3301" \
 -d images.perfumerlabs.com/dist/queue:v1.4.2

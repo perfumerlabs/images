@@ -15,7 +15,6 @@ For example, this command installs PostgreSQL from [official docker image](https
 
 ```bash
 docker run \
--p 5432:5432/tcp \
 -v /custom/mount:/var/lib/postgresql/data \
 -e POSTGRES_PASSWORD=mysecretpassword
 -d postgres
@@ -35,7 +34,6 @@ Then this command installs Ncanode.
 
 ```bash
 docker run \
--p 80:80/tcp \
 -e NCANODE_REMOTE_URL=http://ncanode-origin:14579 \
 -e NCANODE_KEY=/path/to/key \
 -e NCANODE_PWD=123456 \

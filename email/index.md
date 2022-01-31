@@ -24,7 +24,6 @@ Installation of container can be done with this command:
 
 ```bash
 docker run \
--p 80:80/tcp \
 -e EMAIL_FROM=noreply@your-domain.com \
 -e SMTP_HOST=smtp-pulse.com \
 -e SMTP_PORT=465 \

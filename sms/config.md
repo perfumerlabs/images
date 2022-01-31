@@ -15,7 +15,7 @@ Environment variables
 - SMSCRU_PASSWORD - [smsc.ru](https://smsc.ru) provider password. Required, if this provider is used.
 - TWILIO_SID - [twilio.com](https://twilio.com) providers SID parameter. Required, if this provider is used.
 - TWILIO_TOKEN - [twilio.com](https://twilio.com) providers Token parameter. Required, if this provider is used.
-- TWILIO_PHONE - [twilio.com](https://twilio.com) providers account phone number. Required, if this provider is used.
+- TWILIO_PHONE - [twilio.com](https://twilio.com) providers sender phone number. Required, if this provider is used.
 - PG_HOST - PostgreSQL host. Required.
 - PG_REAL_HOST - PostgreSQL database instance host (not PgBouncer). Required.
 - PG_PORT - PostgreSQL port. Default value is 5432.

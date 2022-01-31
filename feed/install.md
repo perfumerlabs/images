@@ -15,7 +15,6 @@ For example, this command installs PostgreSQL from [official docker image](https
 
 ```bash
 docker run \
--p 5432:5432/tcp \
 -v /custom/mount:/var/lib/postgresql/data \
 -e POSTGRES_PASSWORD=mysecretpassword
 -d postgres
@@ -25,7 +24,6 @@ Suppose, you installed PostgreSQL server and now have PostgreSQL host and port. 
 
 ```bash
 docker run \
--p 80:80/tcp \
 -e PG_REAL_HOST=db \
 -e PG_HOST=db \
 -e PG_REAL_HOST=db \
@@ -33,7 +31,7 @@ docker run \
 -e PG_DATABASE=feed_db \
 -e PG_USER=user \
 -e PG_PASSWORD=password \
--d images.perfumerlabs.com/dist/feed:v1.6.1
+-d images.perfumerlabs.com/dist/feed:v2.0.0
 ```
 
 Tie all together with Docker Compose:
@@ -48,7 +46,7 @@ services:
     volumes:
       - /custom/mount:/var/lib/postgresql/data
   feed:
-    image: images.perfumerlabs.com/dist/feed:v1.6.1
+    image: images.perfumerlabs.com/dist/feed:v2.0.0
     environment:
       PG_HOST: postgres
       PG_REAL_HOST: postgres

@@ -15,7 +15,6 @@ For example, this command installs PostgreSQL from [official docker image](https
 
 ```bash
 docker run \
--p 5432:5432/tcp \
 -v /custom/mount:/var/lib/postgresql/data \
 -e POSTGRES_PASSWORD=mysecretpassword
 -d postgres
@@ -25,7 +24,6 @@ Suppose, you installed PostgreSQL server and now have PostgreSQL host and port. 
 
 ```bash
 docker run \
--p 80:80/tcp \
 -e SMS_PROVIDER=smscru \
 -e SMSCRU_SENDER=sender \
 -e SMSCRU_USERNAME=username \
@@ -78,7 +76,6 @@ With next command we create Queue container with 1 worker sending emails (you ca
 
 ```bash
 docker run \
--p 80:80/tcp \
 -e "QUEUE_WORKERS={\"sms\":1}" \
 -v tarantool:/var/lib/tarantool \
 -d images.perfumerlabs.com/dist/queue:v1.4.1

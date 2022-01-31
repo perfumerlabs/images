@@ -14,7 +14,6 @@ Next command runs container with those parameters:
 
 ```bash
 docker run \
--p 80:80/tcp \
 -e EMAIL_FROM=your-gmail-account@gmail.com \
 -e SMTP_HOST=smtp.gmail.com \
 -e SMTP_PORT=465 \
@@ -32,7 +31,6 @@ With next command we create Queue container with 1 worker sending emails (you ca
 
 ```bash
 docker run \
--p 80:80/tcp \
 -e "QUEUE_WORKERS={\"email\":1}" \
 -v tarantool:/var/lib/tarantool \
 -d images.perfumerlabs.com/dist/queue:v1.4.1

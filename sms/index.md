@@ -30,7 +30,6 @@ Then, install container with this command (SMS uses PostgreSQL to persist some i
 
 ```bash
 docker run \
--p 80:80/tcp \
 -e SMS_PROVIDER=smscru \
 -e SMSCRU_SENDER=your_smscru_sender_name \
 -e SMSCRU_USERNAME=your_smscru_username \
