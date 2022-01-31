@@ -34,7 +34,7 @@ docker run \
 -e PG_DATABASE=sms_db \
 -e PG_USER=user \
 -e PG_PASSWORD=password \
--d images.perfumerlabs.com/dist/sms:v2.0.0
+-d images.perfumerlabs.com/dist/sms:v2.1.0
 ```
 
 Tie all together with Docker Compose:
@@ -49,7 +49,7 @@ services:
     volumes:
       - /custom/mount:/var/lib/postgresql/data
   sms:
-    image: images.perfumerlabs.com/dist/sms:v2.0.0
+    image: images.perfumerlabs.com/dist/sms:v2.1.0
     environment:
       PG_HOST: postgres
       PG_REAL_HOST: postgres
@@ -93,7 +93,7 @@ services:
     volumes:
       - tarantool:/var/lib/tarantool
   sms:
-    image: images.perfumerlabs.com/dist/sms:v2.0.0
+    image: images.perfumerlabs.com/dist/sms:v2.1.0
     environment:
       PG_HOST: postgres
       PG_REAL_HOST: postgres

@@ -19,7 +19,7 @@ Currently, we support 4 SMS Providers
 
 1. [Twilio](https://twilio.com) - big international provider
 1. [SMSC](https://smsc.ru) - biggest Russia Federation Provider
-1. [EpochtaSMS](https://www.epochta.ru/) - another Russia Federation provider
+1. [Epochta](https://www.epochta.ru/) - another Russia Federation provider
 1. [Mobizon](https://mobizon.kz) - Kazakhstan provider
 
 Usage
@@ -40,7 +40,7 @@ docker run \
 -e PG_DATABASE=sms_db \
 -e PG_USER=user \
 -e PG_PASSWORD=password \
--d images.perfumerlabs.com/dist/sms:v2.0.0
+-d images.perfumerlabs.com/dist/sms:v2.1.0
 ```
 
 After setup call this API in your code to send SMS:

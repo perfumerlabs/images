@@ -52,7 +52,7 @@ services:
       postgres:
         condition: service_started
   sms:
-    image: images.perfumerlabs.com/dist/sms:v2.0.0
+    image: images.perfumerlabs.com/dist/sms:v2.1.0
     environment:
       PG_HOST: postgres
       PG_REAL_HOST: postgres
