@@ -8,7 +8,7 @@ nav_order: 3
 Environment variables
 =====================
 
-- SMS_PROVIDER - Default sms provider to use. Required. "smscru", "twilio", "epochtasmsru", "mobizonkz" values are acceptable.
+- SMS_PROVIDER - Default sms provider to use. Required. "smscru", "twilio", "epochtaru", "mobizonkz" values are acceptable.
 - TWILIO_SID - [twilio.com](https://twilio.com) providers SID parameter. Required, if this provider is used.
 - TWILIO_TOKEN - [twilio.com](https://twilio.com) providers Token parameter. Required, if this provider is used.
 - TWILIO_PHONE - [twilio.com](https://twilio.com) providers sender phone number. Required, if this provider is used.
