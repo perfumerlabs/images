@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Qiwi Payments
+parent: Qiwi Payments
 title: Configuration
 nav_order: 3
 ---
