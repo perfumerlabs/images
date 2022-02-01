@@ -99,6 +99,6 @@ where
 - "sum" - sum of payment
 - "created_at" - timestamp of operation
 
-You must respond with any 2xx status code and any content. Any other response will be considered as invalid,
+You must respond with any 200 or 201 status code and any content. Any other response will be considered as invalid,
 and request will be retried later.
 Note, that there can be several requests with same "code", so you have to properly process it on your side.
