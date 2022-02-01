@@ -27,7 +27,7 @@ docker run \
 -e PG_HOST=db \
 -e PG_REAL_HOST=db \
 -e PG_PORT=5432 \
--e PG_DATABASE=sms_db \
+-e PG_DATABASE=qiwi \
 -e PG_USER=user \
 -e PG_PASSWORD=password \
 -e QIWI_CHECK_URL=http://example.com/my-check-url \
@@ -54,7 +54,7 @@ services:
       PG_HOST: postgres
       PG_REAL_HOST: postgres
       PG_PORT: 5432
-      PG_DATABASE: sms
+      PG_DATABASE: qiwi
       PG_USER: postgres
       PG_PASSWORD: mysecretpassword
       QIWI_CHECK_URL: http://example.com/my-check-url
