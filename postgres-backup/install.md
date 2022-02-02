@@ -1,6 +1,6 @@
 ---
 layout: default
-parent: Postgres Backup
+parent: PostgreSQL Backups Tester
 title: Installation
 nav_order: 2
 ---
