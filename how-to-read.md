@@ -1,6 +1,6 @@
 ---
 layout: default
-title: How to read this Docs
+title: How to Read the Docs
 nav_order: 3
 ---
 
