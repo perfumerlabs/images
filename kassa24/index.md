@@ -1,13 +1,104 @@
 ---
 layout: default
-title: Kassa24
+title: Kassa24 Payments
 nav_order: 75
 has_children: true
 ---
 
-This is microservice to receive payments from [Kassa24](https://www.kassa24.kz//) terminals.
+Kassa24 Terminal Payments
+======================
 
-We do have this integration in one of our projects, but did not bundle it to Docker container yet.
+This image provides integration with [Kassa24](https://www.kassa24.kz/) terminals.
+Kassa24 provides possibility to receive payments through their terminals.
+In order to have this possibility you must submit contract with them first.
 
-Please, contact us to [support@perfumerlabs.com](mailto:support@perfumerlabs.com) if you need this container.
-We will try to prioritize this task and pack it as soon as possible.
+Usage
+-----
+
+After submitting contract you have to provide to Kassa24 your payment gateway endpoint.
+Provide `https://this-image-host/payment` endpoint.
+This image has possibility to configure HTTP Basic Authentication with `HTTP_AUTH_USERNAME` and `HTTP_AUTH_PASSWORD` variables,
+and it is strongly recommended to do it.
+So, you final endpoint can something like `https://http_username:http_password@this-image-host/payment`,
+where `http_username` and `http_password` are HTTP Basic Authentication credentials.
+
+Then Kassa24 will send requests to that endpoint.
+This image creates a table in the database, called `kassa24_http_log`.
+This table consist of all incoming HTTP requests.
+Table structure is:
+
+- id[bigint] - auto-incremented identity
+- ip[string] - IP-address of sender
+- url[string] - URL which was called by sender
+- method[string] - request method, for example, GET or POST
+- headers[json] - request headers object
+- body[string] - request body content
+- created_at[datetime] - UTC timestamp of the request
+
+Check Command
+-------------
+
+Kassa24 has option to validate accounts before payment for validation.
+When customer dial his account, Kassa24 sends CHECK command to backend.
+If you don't want to check accounts and accept any account, then you can just leave default settings,
+and the image will do all processing on its side.
+
+If you want to validate accounts on your backend, then set variable `KASSA24_CHECK_URL`.
+It must be accessible from container endpoint.
+When CHECK command received, container will request this `KASSA24_CHECK_URL` with GET method and add account number to query parameter.
+For example:
+
+If `KASSA24_CHECK_URL=http://my-backend/my-check-endpoint`, then the request will be
+`GET http://my-backend/my-check-endpoint?account=123456`, where 123456 is customers dialed account.
+
+If account is valid then you must return `200 Ok` status code and any content.
+Any other response is considered as invalid and container returns error to Kassa24, then payment is interrupted.
+
+Payment
+-------
+
+Container processes payment on its side and doesn't require any action.
+This image creates a table in the database to view completed transactions, called `kassa24_transaction`.
+Table structure is:
+
+- id[bigint] - auto-incremented identity
+- account[string] - account of customer
+- code[string] - unique identity of transaction in Kassa24 system.
+- sum[float] - sum of payment.
+- status[integer] - status of transaction (0 - transaction received, 1 - transaction completed (see below about webhooks)
+
+Webhook
+-------
+
+If you want to receive events about payment to your backend, then you have to configure `KASSA24_WEBHOOK_URL`.
+It must be accessible from container endpoint.
+After container receive a transaction, it is saved with status 0 (received).
+On the background container will make repetitive request to `KASSA24_WEBHOOK_URL` with POST method till valid response is received.
+Note, that there are no retry limit.
+For example:
+
+If `KASSA24_WEBHOOK_URL=http://my-backend/my-webhook-endpoint`, then the request wll be:
+
+`POST http://my-backend/my-webhook-endpoint`
+
+```json
+{
+    "id": "123",
+    "account": "123456",
+    "code": "563456456745",
+    "sum": 45.0,
+    "created_at": "2022-02-10 12:00:00"
+}
+```
+
+where
+
+- "id" - unique identity in the container
+- "code" - unique identity in Kassa24 system
+- "account" - account of customer
+- "sum" - sum of payment
+- "created_at" - timestamp of operation
+
+You must respond with any 200 or 201 status code and any content. Any other response will be considered as invalid,
+and request will be retried later.
+Note, that there can be several requests with same "code", so you have to properly process it on your side.

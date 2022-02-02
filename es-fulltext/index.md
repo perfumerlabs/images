@@ -5,6 +5,9 @@ nav_order: 60
 has_children: true
 ---
 
+ElasticSearch Fulltext
+======================
+
 This is microservice to store to and retrieve results from ElasticSearch.
 Index mapping in this container is optimized for Fulltext searching.
 

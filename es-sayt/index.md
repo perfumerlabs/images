@@ -5,6 +5,9 @@ nav_order: 60
 has_children: true
 ---
 
+ElasticSearch Search-as-you-type
+================================
+
 This is microservice to store to and retrieve results from ElasticSearch.
 Index mapping in this container is optimized for Search-as-you-type searching.
 
