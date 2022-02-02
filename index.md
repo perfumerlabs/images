@@ -93,6 +93,7 @@ Testing Tools
 
 1. [PostgreSQL backups tester](https://perfumerlabs.github.io/images/postgres-backup/) is small service, which continuously tests your PostgreSQL backups for corruption.
 1. [Request catcher](https://perfumerlabs.github.io/images/request-catcher/) is a tool for catching web requests for testing webhooks, http clients and other applications that communicate over http, especially helpful to cover it with autotests.
+1. [NcaLayer Mock](https://perfumerlabs.github.io/images/ncalayer-mock/) is a websocket server which acts just like [NcaLayer](https://pki.gov.kz/en/ncalayer-2/) making it possible to cover web-site with autotests such as Selenium or Katalon.
 
 Kazakhstan NCA certificates
 ---------------------------
