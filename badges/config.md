@@ -13,9 +13,8 @@ Environment variables
 - MG_PORT - mongo server port. Optional. "27017" by default.
 - MG_DATABASE - mongo database. Optional. "badges" by default.
 - MG_COLLECTIONS - mongo collection names to use separated by a comma. Badges will setup a number of indexes for these collections. Optional.
-- PHP_PM_MAX_CHILDREN - number of FPM workers. Default value is 100.
-- PHP_PM_MAX_REQUESTS - number of FPM max requests. Default value is 500.
-- PHP_MEMORY_LIMIT - memory_limit option in php.ini. Optional. The default value is 128M.
+
+Available environment variables for PHP are [here](/images/software.html#php-configuration).
 
 Volumes
 =======

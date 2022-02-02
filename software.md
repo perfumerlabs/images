@@ -28,9 +28,9 @@ You should have it on your side.
 
 Every image, which deals with PostgreSQL, supports several environment parameters:
 
-- `PG_REAL_HOST` - real hostname of master server instance (not PgBouncer or other connection pool). It is used to create database or scheme and make migrations.
+- `PG_REAL_HOST` - real hostname of master server instance (not PgBouncer or other connection pool). It is used to create database or schema and make migrations.
 - `PG_HOST` - hostname of master server to connect regular traffic to (it can be PgBouncer or other connection pool). 
-- `PG_PORT` - port og instance. Default is 5432.
+- `PG_PORT` - port of instance. Default is 5432.
 - `PG_SLAVES` - hostnames of slave instances separated by a comma, for example, `slave1,slave2`
 - `PG_USER` - database user software will use to connect to instances with.
 - `PG_PASSWORD` - database user password software will use to connect to instances with.
@@ -41,7 +41,7 @@ All of our images dealing with PostgreSQL has their own unique table prefix.
 For example, SMS image creates tables with `sms_*` naming convention
 or OTP image creates tables with `otp_*` naming convention.
 
-There will be no problem if you configure images to same database and `public` scheme.
+There will be no problem if you configure images to same database and `public` schema.
 But the best practice we suppose is to have 1 database and to use different schema for different container.
 
 PHP configuration

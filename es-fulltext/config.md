@@ -11,6 +11,8 @@ Environment variables
 - ES_HOST - Elasticsearch instance url. Required.
 - ES_PORT - Elasticsearch instance port. Default is 9200.
 
+Available environment variables for PHP are [here](/images/software.html#php-configuration).
+
 Volumes
 =======
 

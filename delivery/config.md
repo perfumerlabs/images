@@ -18,14 +18,10 @@ Environment variables
 - DELIVERY_URL - this service URL. Required.
 - DELIVERY_FRACTION_WORKER - worker that handles delivery queueing. Required.
   DELIVERY_TIMEZONE - timezone
-- PHP_PM_MAX_CHILDREN - number of FPM workers. Default value is 10.
-- PHP_PM_MAX_REQUESTS - number of FPM max requests. Default value is 500.
-- PG_HOST - PostgreSQL host. Required.
-- PG_PORT - PostgreSQL port. Default value is 5432.
-- PG_DATABASE - PostgreSQL database name. Required.
-  PG_SCHEMA - PostgreSQL database schema. Default value is 'public'
-- PG_USER - PostgreSQL user name. Required.
-- PG_PASSWORD - PostgreSQL user password. Required.
+
+Image requires PostgreSQL instance. See available environment variables [here](/images/software.html#sql-database).
+
+Available environment variables for PHP are [here](/images/software.html#php-configuration).
 
 Volumes
 =======

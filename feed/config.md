@@ -10,15 +10,10 @@ Environment variables
 
 - MS_TIMEZONE - Timezone of incoming or outcoming dates. Optional. Default is "Utc".
 - FEED_COLLECTIONS - Create collections on startup (list through comma). Optional.
-- PG_HOST - PostgreSQL connection host. Required.
-- PG_REAL_HOST - PostgreSQL database instance host (not PgBouncer). Required.
-- PG_PORT - PostgreSQL port. Default value is 5432.
-- PG_DATABASE - PostgreSQL database name. Required.
-- PG_SCHEMA - PostgreSQL database schema. Default is "public".
-- PG_USER - PostgreSQL user name. Required.
-- PG_PASSWORD - PostgreSQL user password. Required.
-- PHP_PM_MAX_CHILDREN - number of FPM workers. Default value is 10.
-- PHP_PM_MAX_REQUESTS - number of FPM max requests. Default value is 500.
+
+Image requires PostgreSQL instance. See available environment variables [here](/images/software.html#sql-database).
+
+Available environment variables for PHP are [here](/images/software.html#php-configuration).
 
 Volumes
 =======

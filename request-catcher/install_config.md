@@ -18,7 +18,7 @@ docker run \
 Environment variables
 =====================
 
-This image does not have environment parameters.
+Available environment variables for PHP are [here](/images/software.html#php-configuration).
 
 Volumes
 =======

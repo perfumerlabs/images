@@ -17,18 +17,11 @@ Environment variables
 - UPLOAD_DIGEST_LENGTH - length of the meaningful part of the digest (without UPLOAD_DIGEST_PREFIX). Optional. The default and minimum allowed value is 10.
 - UPLOAD_AUTH - File download authentication (see below). The default value is false.
 - UPLOAD_AUTH_SALT - File download authentication salt (see below). The default value is false.
-- PG_HOST - PostgreSQL connection host. Required.
-- PG_REAL_HOST - PostgreSQL database instance host (not PgBouncer). Required.
-- PG_PORT - PostgreSQL port. Default value is 5432.
-- PG_DATABASE - PostgreSQL database name. Required.
-- PG_SCHEMA - PostgreSQL database schema. Default is "public".
-- PG_USER - PostgreSQL user name. Required.
-- PG_PASSWORD - PostgreSQL user password. Required.
 - CLEAR_CACHE_PERIOD - Time in seconds thumbnail's cache lives in seconds. Optional. Default is 5184000 (2 months).
-- PHP_MAX_EXECUTION_TIME - max_execution_time option in php.ini. Optional. The default value is 60.
-- PHP_MEMORY_LIMIT - memory_limit option in php.ini. Optional. The default value is 512M.
-- PHP_PM_MAX_CHILDREN - number of FPM workers. Default value is 10.
-- PHP_PM_MAX_REQUESTS - number of FPM max requests. Default value is 500.
+
+Image requires PostgreSQL instance. See available environment variables [here](/images/software.html#sql-database).
+
+Available environment variables for PHP are [here](/images/software.html#php-configuration).
 
 Volumes
 =======

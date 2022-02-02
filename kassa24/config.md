@@ -13,14 +13,11 @@ Environment variables
 - HTTP_AUTH_USERNAME - HTTP Basic Authentication username. Optional.
 - HTTP_AUTH_PASSWORD - HTTP Basic Authentication password. Optional.
 - MS_TIMEZONE - Timezone of your location. It affects to webhook request sent dates.  Optional. Default is "UTC".
-- PG_HOST - PostgreSQL host. Required.
-- PG_REAL_HOST - PostgreSQL database instance host (not PgBouncer). Required.
-- PG_PORT - PostgreSQL port. Default value is 5432.
-- PG_DATABASE - PostgreSQL database name. Required.
-- PG_SCHEMA - PostgreSQL database schema. Default is "public".
-- PG_USER - PostgreSQL user name. Required.
-- PG_PASSWORD - PostgreSQL user password. Required.
 - DEBUG - If this is "true", extra logging information is printed to container STDOUT. Optional. Default is "false".
+
+Image requires PostgreSQL instance. See available environment variables [here](/images/software.html#sql-database).
+
+Available environment variables for PHP are [here](/images/software.html#php-configuration).
 
 Volumes
 =======

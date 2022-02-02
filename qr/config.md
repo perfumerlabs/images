@@ -8,7 +8,7 @@ nav_order: 3
 Environment variables
 =====================
 
-This image has no environment variables.
+Available environment variables for PHP are [here](/images/software.html#php-configuration).
 
 Volumes
 =======
