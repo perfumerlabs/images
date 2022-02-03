@@ -55,7 +55,7 @@ docker run \
 -e RESTORE_PORT=5432 \
 -e RESTORE_USER=user \
 -e RESTORE_PASSWORD=password \
--d images.perfumerlabs.com/dist/postgres-backup:v1.0.0
+-d images.perfumerlabs.com/dist/postgres-backup:v1.1.0
 ```
 
 Tie all together with Docker Compose:
@@ -86,7 +86,7 @@ services:
       postgres:
         condition: service_started
   restore: # container which tests backups
-    image: images.perfumerlabs.com/dist/postgres-backup:v1.0.0
+    image: images.perfumerlabs.com/dist/postgres-backup:v1.1.0
     environment:
       PG_HOST: postgres # Links to postgresql instance to save statuses about restoration
       PG_REAL_HOST: postgres

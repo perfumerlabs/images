@@ -12,7 +12,7 @@ Request Catcher does not require any dependencies:
 
 ```bash
 docker run \
--d images.perfumerlabs.com/dist/request-catcher:v2.0.0
+-d images.perfumerlabs.com/dist/request-catcher:v2.1.0
 ```
 
 Environment variables

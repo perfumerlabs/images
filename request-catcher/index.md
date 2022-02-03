@@ -76,7 +76,7 @@ services:
   my-service:
     image: my-service
   external-api:
-    image: images.perfumerlabs.com/dist/request-catcher:v2.0.0
+    image: images.perfumerlabs.com/dist/request-catcher:v2.1.0
 ```
 
 Every request sent to Request Catcher is persisted and can be asserted in the tests via `/_last_request_` endpoint.
