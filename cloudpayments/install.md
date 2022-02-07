@@ -1,6 +1,6 @@
 ---
 layout: default
-parent: Kassa24 Payments
+parent: Cloudpayments
 title: Installation
 nav_order: 2
 ---
@@ -8,7 +8,7 @@ nav_order: 2
 Installation
 ============
 
-Kassa24 Payments uses PostgreSQL as database to store information.
+Cloudpayments Payments uses PostgreSQL as database to store information.
 
 First, you need to install any instance of PostgreSQL server. It can be either docker container or dedicated installation.
 For example, this command installs PostgreSQL from [official docker image](https://hub.docker.com/_/postgres):
@@ -20,21 +20,22 @@ docker run \
 -d postgres
 ```
 
-Suppose, you installed PostgreSQL server and now have PostgreSQL host and port. Then this command installs Kassa24 Payments.
+Suppose, you installed PostgreSQL server and now have PostgreSQL host and port. Then this command installs Cloudpayments Payments.
 
 ```bash
 docker run \
 -e PG_HOST=db \
 -e PG_REAL_HOST=db \
 -e PG_PORT=5432 \
--e PG_DATABASE=kassa24 \
+-e PG_DATABASE=cloudpayments \
 -e PG_USER=user \
 -e PG_PASSWORD=password \
--e KASSA24_CHECK_URL=http://example.com/my-check-url \
--e KASSA24_WEBHOOK_URL=http://example.com/my-webhook-url \
+-e CLOUDPAYMENTS_PUBLIC_ID=123456 \
+-e CLOUDPAYMENTS_CHECK_URL=http://example.com/my-check-url \
+-e CLOUDPAYMENTS_WEBHOOK_URL=http://example.com/my-webhook-url \
 -e HTTP_AUTH_USERNAME=http_username \
 -e HTTP_AUTH_PASSWORD=http_password \
--d images.perfumerlabs.com/dist/kassa24:v1.1.0
+-d images.perfumerlabs.com/dist/cloudpayments:v1.0.0
 ```
 
 Tie all together with Docker Compose:
@@ -48,17 +49,18 @@ services:
       POSTGRES_PASSWORD: mysecretpassword
     volumes:
       - /custom/mount:/var/lib/postgresql/data
-  kassa24:
-    image: images.perfumerlabs.com/kassa24:v1.1.0
+  cloudpayments:
+    image: images.perfumerlabs.com/cloudpayments:v1.0.0
     environment:
       PG_HOST: postgres
       PG_REAL_HOST: postgres
       PG_PORT: 5432
-      PG_DATABASE: kassa24
+      PG_DATABASE: cloudpayments
       PG_USER: postgres
       PG_PASSWORD: mysecretpassword
-      KASSA24_CHECK_URL: http://example.com/my-check-url
-      KASSA24_WEBHOOK_URL: http://example.com/my-webhook-url
+      CLOUDPAYMENTS_PUBLIC_ID: 123456
+      CLOUDPAYMENTS_CHECK_URL: http://example.com/my-check-url
+      CLOUDPAYMENTS_WEBHOOK_URL: http://example.com/my-webhook-url
       HTTP_AUTH_USERNAME: http_username
       HTTP_AUTH_PASSWORD: http_password
     depends_on:
@@ -66,4 +68,4 @@ services:
         condition: service_started
 ```
 
-Refer to [configuration page](/images/kassa24/config) for parameters description.
+Refer to [configuration page](/images/cloudpayments/config) for parameters description.
