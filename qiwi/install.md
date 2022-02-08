@@ -34,7 +34,7 @@ docker run \
 -e QIWI_WEBHOOK_URL=http://example.com/my-webhook-url \
 -e HTTP_AUTH_USERNAME=http_username \
 -e HTTP_AUTH_PASSWORD=http_password \
--d images.perfumerlabs.com/dist/qiwi:v1.0.0
+-d images.perfumerlabs.com/dist/qiwi:v1.1.0
 ```
 
 Tie all together with Docker Compose:
