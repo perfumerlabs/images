@@ -61,6 +61,7 @@ Different Storage Integrations
 1. [ElasticSearch Fulltext search](https://perfumerlabs.github.io/images/es-fulltext/) is simplified API (without no need to learn ElasticSearch syntax) to create, index and search through ElasticSearch collections built with Fulltext search template.
 1. [ElasticSearch Search-as-you-type](https://perfumerlabs.github.io/images/es-sayt/) is simplified API (without no need to learn ElasticSearch syntax) to create, index and search through ElasticSearch collections built with Search-as-you-Type search template.
 1. [One Time Password](https://perfumerlabs.github.io/images/otp/) generator provides storing and checking one time passwords, with built-in integration with our services such as Email and SMS.
+1. [Notifications Center](https://perfumerlabs.github.io/images/notify/) is a place to manage notifications content and which channels (SMS, Email) to send it through.
 1. [Queue Server](https://perfumerlabs.github.io/images/queue/) is a bundled simplified server to perform queuing operations.
 
 Payment Gateways Integrations
