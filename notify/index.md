@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Notifications Center
-nav_order: 95
+nav_order: 85
 has_children: true
 ---
 
