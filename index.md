@@ -53,6 +53,7 @@ Files and Images
 1. [HTML to PDF converter](https://perfumerlabs.github.io/images/pdf/) based on LibreOffice tool.
 1. [QR](https://perfumerlabs.github.io/images/qr/) is a simple QR-code generator from URL.
 1. [Upload Server](https://perfumerlabs.github.io/images/upload/) provides API to store images, files, video and audio, as well as actions such as cropping, resizing, rotating and compression.
+1. [Charts](https://perfumerlabs.github.io/images/charts/) provides fast implementation of some kind of charts through URL.
 
 Different Storage Integrations
 ------------------------------
