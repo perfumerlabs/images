@@ -4,48 +4,31 @@ title: About
 nav_order: 1
 ---
 
-PerfumerLabs images documentation
-=================================
+Images documentation
+====================
 
-This is documentation in Jekyll format for all PerfumerLabs images.
+Hello, my name is Ilyas Makashev. This is documentation in Jekyll format for all Docker images I develop.
 
-PerfumerLabs is software company which specializes to develop different small Docker images for various needs.
 Nowadays, every development consists of working with different external services, storages, data structures, etc,
 making it hard to start any project from scratch.
+That's why at some moment I decided to wire up different functionality into reusable versionable Docker images instead of copying source again and again.
 
-PerfumerLabs software can save you up to several months of developers work.
-We aim to provide as much as possible ready-to-use Docker images to cover different side-logic functionality.
-We try to convert complex integrations and data storage syntax and logic into simple REST API server,
+I aim to provide as much as possible ready-to-use Docker images to cover different side-logic functionality.
+I try to convert complex integrations and data storage syntax and logic into simple REST API server,
 which is familiar to even inexperienced developers.
 
-We don't provide any Site-as-a-Service-like services or any other online services.
-Al our software is on-premise Docker images, which you install on your servers.
-
-If you want to learn about our company and services, please, visit our [web-site](https://perfumerlabs.com).
-
-Why Container instead of Library?
----------------------------------
-
-Of course, every functionality we provide can be done with sample libraries in you favourite language.
-But using containers is much better than implementing your library-based solution:
-
-- Container is a plug-and-play solution: just run it and it just works.
-- Library can have very specific logic/syntax/protocol, and it usually takes much more time to implement it.
-- Container has not only just library implementation, and also extra features: logging, error handling, caching results, various parameters.
+I don't provide any Site-as-a-Service-like services or any other online services.
+All software is on-premise Docker images, which can be installed to private servers.
 
 License
 -------
 
-All our software is distributed under [closed license](https://perfumerlabs.com/eula).
-After purchasing subscription on the [web-site](https://perfumerlabs.com/) we will create you account,
-which has access to our Docker Container Registry.
-Note, that you are not allowed to upload any images to your own or public Container Registry.
-Also we don't provide sources of our images.
-These license limitations can be canceled for you only in Enterprise pricing plan or special agreement between PerfumerLabs and you.
+All software is distributed under closed license.
+But I am happy to share code and images on free basis.
+Just let me know to the [email](mailto:mehmatovec@gmail.com), [github account](https://github.com/blumfontein) or [LinkedIn](https://www.linkedin.com/in/ilyas-makashev-32410a71/), and I provide you access to my GitLab instance with the sources.
 
 Below is a categorized list of currently available Docker images.
-We actively add new software to our collection and release new versions.
-Follow us in [Telegram](https://t.me/perfumerlabs) to watch for updates.
+I actively add new software to my collection and release new versions, when the need appears in my jobs.
 
 Files and Images
 ----------------
