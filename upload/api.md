@@ -2,7 +2,7 @@
 layout: default
 parent: Upload
 title: API
-nav_order: 5
+nav_order: 6
 ---
 
 API Reference
@@ -10,7 +10,7 @@ API Reference
 
 ### Upload a file
 
-POST /file - upload a file, provide a file within form-data body with a key "file".
+POST /file - upload a file, provide a file within form-data body with a key "file" and scope key (optional).
 
 Response: JSON with 3 fields - status, digest, download.
 
@@ -74,7 +74,7 @@ DELETE /file/abcdeAce4VKD2Wg
 
 ### Upload an image
 
-POST /image - upload an image, provide a file within form-data body with a key "file".
+POST /image - upload an image, provide a file within form-data body with a key "file" and scope key (optional).
 
 Response: JSON with 4 fields - status, digest, download, thumbnail.
 
@@ -186,7 +186,7 @@ DELETE /image/abcdeAce4VKD2Wg
 
 ### Upload a video
 
-POST /video - upload a video, provide a file within form-data body with a key "file". Video will be transcoded to mp4.
+POST /video - upload a video, provide a file within form-data body with a key "file" and scope key (optional). Video will be transcoded to mp4.
 
 Response: JSON with 8 fields - status, digest, name, extension, mimetype, size, download, preview.
 
@@ -263,7 +263,7 @@ DELETE /video/abcdeAce4VKD2Wg
 
 ### Upload an audio
 
-POST /audio - upload an audio, provide a file within form-data body with a key "file".
+POST /audio - upload an audio, provide a file within form-data body with a key "file" and scope key (optional).
 
 Response: JSON with 8 fields - status, digest, name, extension, mimetype, size, download, duration.
 
